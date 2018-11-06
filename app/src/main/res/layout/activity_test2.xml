@@ -2,9 +2,11 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.othershe.behaviortest.test2.TestActivity2">
+
 
     <TextView
         android:id="@+id/header"
@@ -19,6 +21,8 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_list"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/behavior_recyclerview" />

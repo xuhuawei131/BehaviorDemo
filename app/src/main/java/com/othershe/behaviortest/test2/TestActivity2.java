@@ -1,5 +1,6 @@
 package com.othershe.behaviortest.test2;
 
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,7 +19,11 @@ public class TestActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test2);
 
+        CoordinatorLayout layout_root=findViewById(R.id.layout_root);
         RecyclerView recyclerView = findViewById(R.id.my_list);
+        layout_root.bringChildToFront(recyclerView);
+        layout_root.updateViewLayout(recyclerView, recyclerView.getLayoutParams());
+
         List<String> list = new ArrayList<>();
         for (int i = 0; i < 15; i++) {
             list.add(i + 1 + "");

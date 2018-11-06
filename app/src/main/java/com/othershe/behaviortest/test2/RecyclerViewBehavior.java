@@ -28,7 +28,7 @@ public class RecyclerViewBehavior extends CoordinatorLayout.Behavior<RecyclerVie
         if (y < 0) {
             y = 0;
         }
-        child.setY(y);
+        child.setY(y-80);
         return true;
     }
 }

@@ -7,6 +7,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -51,15 +52,17 @@ public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<TextView> {
             RecyclerView list = (RecyclerView) target;
             //列表第一个全部可见Item的位置
             int pos = ((LinearLayoutManager) list.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
+            Log.v("xhw","onNestedPreScroll pos"+pos);
+
             if (pos == 0 && pos < lastPosition) {
-                downReach = true;
+//                downReach = true;
             }
 
             if (canScroll(child, dy) && pos == 0) {
                 float finalY = child.getTranslationY() - dy;
                 if (finalY < -child.getHeight()) {
                     finalY = -child.getHeight();
-                    upReach = true;
+//                    upReach = true;
                 } else if (finalY > 0) {
                     finalY = 0;
                 }
